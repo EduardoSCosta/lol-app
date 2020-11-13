@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://ddragon.leagueoflegends.com/',
+  baseURL: 'https://ddragon.leagueoflegends.com/',
 });
 
 export default api;

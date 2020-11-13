@@ -24,7 +24,7 @@ const Champions = () => {
           {championsId.map((champion) => {
               return (
                 <div className="champion-container" key={champion}>
-                  <img className="champion-img" src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion}_0.jpg`} alt={champion}/>
+                  <img className="champion-img" src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion}_0.jpg`} alt={champion}/>
                   <span className="champion-name" >{championsList[champion].name}</span>                  
                 </div>
               );
