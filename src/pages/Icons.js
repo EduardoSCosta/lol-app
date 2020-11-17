@@ -5,9 +5,12 @@ import '../styles/pages/icons.css';
 const Icons = () => {
 
   const [iconsId, setIconsId] = useState([]);
-
+  
   const api_call = async () => {
-    const request = api.get(`cdn/10.23.1/data/en_US/profileicon.json`);
+    const versionRequest = api.get(`api/versions.json`);
+    const versionResponse = await versionRequest;
+
+    const request = api.get(`cdn/${versionResponse.data[0]}/data/en_US/profileicon.json`);
     const response = await request;
     setIconsId(Object.keys(response.data.data));
     console.log(Object.keys(response.data.data))
@@ -17,10 +20,9 @@ const Icons = () => {
     api_call();
   }, []);
 
-
-
   return (
     <div className="icons-page">
+      <h1>Ícones</h1>
       <div className="icons-list">
         {iconsId.map((icon) => {
             return (

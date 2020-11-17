@@ -9,7 +9,10 @@ const Champions = () => {
   const [orderedChampions, setOrderedChampions] = useState([]);
 
   const api_call = async () => {
-    const request = api.get(`cdn/10.23.1/data/en_US/champion.json`);
+    const versionRequest = api.get(`api/versions.json`);
+    const versionResponse = await versionRequest;
+    
+    const request = api.get(`cdn/${versionResponse.data[0]}/data/en_US/champion.json`);
     const response = await request;
     setChampionsList(response.data.data);
     setChampionsId(Object.keys(response.data.data));
@@ -29,7 +32,6 @@ const Champions = () => {
         })
       );
     }
-
   }, [championsId, championsList]);
 
   useEffect(() => {
