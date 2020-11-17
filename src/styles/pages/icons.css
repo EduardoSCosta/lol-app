@@ -1,0 +1,11 @@
+.icons-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.icon-img {
+  width: 128px;
+  height: 128px;
+}
+

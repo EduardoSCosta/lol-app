@@ -4,7 +4,8 @@ import '../styles/pages/landing.css';
 const Landing = () => {
     return (
         <div>
-            <Link className="to-champions-page" to={"/champions"}>Campeões</Link>
+            <Link className="to-page" to={"/champions"}>Campeões</Link>
+            <Link className="to-page" to={"/icons"}>Ícones</Link>
         </div>
     )
 }
